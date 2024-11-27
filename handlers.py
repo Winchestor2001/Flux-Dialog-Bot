@@ -3,6 +3,7 @@ from aiogram.types import Message, CallbackQuery, FSInputFile
 from aiogram.fsm.context import FSMContext
 
 from callback_data import FluxOptionsCallback, NextOptionCallback
+from loader import bot, GROUP_ID
 from states import FluxStates
 from keyboards import flux_options, next_button
 from context import DIALOGS
@@ -154,6 +155,6 @@ async def fourteen_state(message: Message, state: FSMContext):
     for item in data.items():
         context += f"<b>{item[0]}</b>:\n<blockquote>{item[1]}</blockquote>\n\n\n"
 
-    await message.answer(text=context)
+    await bot.send_message(chat_id=GROUP_ID, text=context)
 
     await state.clear()

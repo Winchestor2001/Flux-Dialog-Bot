@@ -7,6 +7,7 @@ env = Env()
 env.read_env()
 
 TOKEN = env.str("BOT_TOKEN")
+GROUP_ID = env.str("GROUP_ID")
 if not TOKEN:
     raise ValueError("Токен не найден! Установите переменную окружения BOT_TOKEN.")
 
