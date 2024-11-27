@@ -9,8 +9,7 @@ from handlers import router
 
 async def set_commands():
     commands = [
-        BotCommand(command="/start", description="Начать"),
-        BotCommand(command="/help", description="Помощь"),
+        BotCommand(command="/start", description="Начать")
     ]
     await bot.set_my_commands(commands)
 
